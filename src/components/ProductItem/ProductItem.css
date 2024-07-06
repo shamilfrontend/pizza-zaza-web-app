@@ -1,14 +1,12 @@
 .product {
   display: flex;
   flex-direction: column;
-  row-gap: 4px;
   border: 1px solid var(--tg-theme-button-color, #eee);
   padding: 0;
 }
 
-.img {
+.img-wrapper {
   width: 100%;
-  margin-bottom: 8px;
   background-color: #323337;
 
   img {
@@ -18,16 +16,17 @@
   }
 }
 
+.product-content {
+  padding: 8px 4px;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 86px;
+}
+
 .title {
   font-size: 16px;
-}
-
-.description {
-  font-size: 12px;
-}
-
-.price {
-  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
 }
 
 .add-btn {
