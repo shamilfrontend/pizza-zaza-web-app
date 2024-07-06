@@ -87,17 +87,18 @@ const getTotalPrice = (list = []) => {
 };
 
 const ProductList = () => {
-  const { tg } = useTelegram();
+  const { tg, queryId } = useTelegram();
 
   const [addedItems, setAddedItems] = React.useState([]);
 
   const onSendData = useCallback(() => {
     const data = {
+      queryId,
       products: addedItems,
       totalPrice: getTotalPrice(addedItems),
     };
 
-    fetch('http://localhost:8000/api/products/add', {
+    fetch('http://localhost:8080/web-data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -126,7 +127,6 @@ const ProductList = () => {
     }
 
     setAddedItems(newItems);
-    console.log('newItems', newItems);
 
     if (newItems.length === 0) {
       tg.MainButton.hide();
