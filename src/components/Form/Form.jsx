@@ -47,7 +47,7 @@ const Form = () => {
 
       <select
         value={subject}
-        className="select"
+        className="app-select"
         onChange={(e) => setSubject(e.target.value)}
       >
         <option value="physical">Физ. лицо</option>
