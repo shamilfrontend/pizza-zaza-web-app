@@ -1,7 +1,19 @@
 .product {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 0;
+}
+
+.product::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 45px;
+  height: 45px;
+  background-image: url('./halal.svg');
+  background-repeat: no-repeat;
 }
 
 .img-wrapper {

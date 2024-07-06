@@ -12,7 +12,9 @@ const Header = () => {
 
   return (
     <div className="header">
-      <span className="username">{ user?.username ?? 'Неизвестный пользователь' }</span>
+      <span className="username">
+        Привет, { user?.username ?? 'Неизвестный' }
+      </span>
 
       <Button
         className="header-btn"
