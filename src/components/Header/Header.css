@@ -9,8 +9,10 @@
 .header-img {
   width: 32px;
   height: 32px;
+  margin-right: 8px;
 }
 
 .header-btn {
   background-color: #e64d44;
+  margin-left: auto;
 }
