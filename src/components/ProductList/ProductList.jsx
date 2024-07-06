@@ -63,6 +63,27 @@ const products = [
     description: '630 грамм',
     img: '/images/pizza/8.jpeg'
   },
+  {
+    id: 9,
+    title: 'Пицца Скандинавская',
+    price: 980,
+    description: '600 грамм',
+    img: '/images/pizza/9.jpeg'
+  },
+  {
+    id: 10,
+    title: 'Пицца Рио',
+    price: 820,
+    description: '610 грамм',
+    img: '/images/pizza/10.jpeg'
+  },
+  {
+    id: 11,
+    title: 'Пицца Рио',
+    price: 870,
+    description: '630 грамм',
+    img: '/images/pizza/11.jpeg'
+  },
 ]
 
 const getTotalPrice = (list = []) => {
