@@ -12,13 +12,6 @@ const Header = () => {
 
   return (
     <div className="header">
-      <span>user: {user}</span>
-      <img
-        src={user?.photo_url ?? 'blob:https://web.telegram.org/c62ac36e-f8eb-4547-be3c-62caff751300'}
-        alt=""
-        className="header-img"
-      />
-
       <span className="username">{ user?.username ?? 'Неизвестный пользователь' }</span>
 
       <Button
