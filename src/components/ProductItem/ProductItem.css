@@ -1,22 +1,31 @@
 .product {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--tg-theme-button-color);
-  padding: 15px;
-  width: 170px;
+  row-gap: 4px;
+  border: 1px solid var(--tg-theme-button-color, #eee);
+  padding: 12px;
 }
 
 .img {
   width: 100%;
   height: 100px;
-  margin: 0 10px;
-  background-color: var(--tg-theme-button-color);
+  margin-bottom: 12px;
+  background-color: var(--tg-theme-button-color, #eee);
+}
+
+.title {
+  font-size: 18px;
 }
 
 .description {
-  font-size: 0.8em;
+  font-size: 12px;
+}
+
+.price {
+  font-size: 12px;
 }
 
 .add-btn {
   width: 100%;
+  font-size: 12px;
 }
