@@ -8,10 +8,11 @@ import './Header.css';
 
 const Header = () => {
   const { onClose, user } = useTelegram();
+  console.log('user', user)
 
   return (
     <div className="header">
-      <span>user?.photo_url: {user?.photo_url}</span>
+      <span>user: {user}</span>
       <img
         src={user?.photo_url ?? 'blob:https://web.telegram.org/c62ac36e-f8eb-4547-be3c-62caff751300'}
         alt=""
