@@ -1,7 +1,7 @@
 .button {
   padding: 10px 15px;
-  background-color: var(--tg-theme-button-color);
-  color: var(--tg-theme-text-color);
+  background-color: var(--tg-theme-button-color, #187ff7);
+  color: var(--tg-theme-text-color, #fff);
   border: none;
   outline: none;
   cursor: pointer;
