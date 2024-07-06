@@ -1,7 +1,6 @@
 .product {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--tg-theme-button-color, #eee);
   padding: 0;
 }
 
