@@ -72,14 +72,14 @@ const products = [
   },
   {
     id: 10,
-    title: 'Пицца Рио',
+    title: 'Пицца Ветчина и грибы',
     price: 820,
     description: '610 грамм',
     img: '/images/pizza/10.jpeg'
   },
   {
     id: 11,
-    title: 'Пицца Рио',
+    title: 'Пицца Примавера',
     price: 870,
     description: '630 грамм',
     img: '/images/pizza/11.jpeg'

@@ -3,13 +3,13 @@
   flex-direction: column;
   row-gap: 4px;
   border: 1px solid var(--tg-theme-button-color, #eee);
-  padding: 12px;
+  padding: 0;
 }
 
 .img {
   width: 100%;
   margin-bottom: 8px;
-  background-color: var(--tg-theme-button-color, #eee);
+  background-color: #323337;
 
   img {
     display: block;
@@ -19,7 +19,7 @@
 }
 
 .title {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .description {
