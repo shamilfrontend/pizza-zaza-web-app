@@ -6,6 +6,11 @@
   padding: 12px;
 }
 
+.header-img {
+  width: 32px;
+  height: 32px;
+}
+
 .header-btn {
   background-color: #e64d44;
 }
