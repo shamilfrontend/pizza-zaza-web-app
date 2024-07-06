@@ -1,10 +1,12 @@
 import React from 'react';
 
+import { getFormattedPrice } from '../../helpers/getFormattedPrice';
+
 import Button from '../Button/Button';
 
 import './ProductItem.css';
 
-const ProductItem = ({ product, onAdd }) => {
+const ProductItem = ({ product, onAdd, isAdded }) => {
   const onAddHandler = () => {
     onAdd(product);
   };
@@ -19,15 +21,15 @@ const ProductItem = ({ product, onAdd }) => {
         <div className="title">{product.title}</div>
         <div className="description">{product.description}</div>
         <div className="price">
-          <span>Стоимость: <b>{product.price} ₽</b></span>
+          <span>Стоимость: <b>{getFormattedPrice(product.price)}</b></span>
         </div>
       </div>
 
       <Button
-        className='add-btn'
+        className={`add-btn ${isAdded ? 'add-btn-added' : ''}`}
         onClick={onAddHandler}
       >
-        Добавить
+        {isAdded ? 'Убрать' : 'Добавить'}
       </Button>
     </div>
   );

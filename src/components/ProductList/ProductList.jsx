@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 
+import { getFormattedPrice } from '../../helpers/getFormattedPrice';
 import { useTelegram } from '../../hooks/useTelegram';
 
 import ProductItem from '../ProductItem/ProductItem';
@@ -125,6 +126,7 @@ const ProductList = () => {
     }
 
     setAddedItems(newItems);
+    console.log('newItems', newItems);
 
     if (newItems.length === 0) {
       tg.MainButton.hide();
@@ -133,7 +135,7 @@ const ProductList = () => {
 
       tg.MainButton.setParams({
         color: '#32b545',
-        text: `Купить ${getTotalPrice(newItems)} ₽`
+        text: `Купить ${getFormattedPrice( getTotalPrice(newItems) )}`
       });
     }
   };
@@ -145,6 +147,7 @@ const ProductList = () => {
           key={item.id}
           product={item}
           onAdd={onAdd}
+          isAdded={Boolean(addedItems.find(product => product.id === item.id))}
         />
       ))}
     </div>
