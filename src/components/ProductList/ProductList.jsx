@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 
 import { useTelegram } from '../../hooks/useTelegram';
 
@@ -7,14 +7,62 @@ import ProductItem from '../ProductItem/ProductItem';
 import './ProductList.css';
 
 const products = [
-  { id: 1, title: 'Продукт 1', price: 5_000, description: 'Описание 1' },
-  { id: 2, title: 'Продукт 2', price: 12_000, description: 'Описание 2' },
-  { id: 3, title: 'Продукт 3', price: 5_000, description: 'Описание 3' },
-  { id: 4, title: 'Продукт 4', price: 122, description: 'Описание 4' },
-  { id: 5, title: 'Продукт 5', price: 5_000, description: 'Описание 5' },
-  { id: 6, title: 'Продукт 6', price: 600, description: 'Описание 6' },
-  { id: 7, title: 'Продукт 7', price: 5_500, description: 'Описание 7' },
-  { id: 8, title: 'Продукт 8', price: 12_000, description: 'Описание 8' },
+  {
+    id: 1,
+    title: 'Пицца Ассорти',
+    price: 820,
+    description: '600 грамм',
+    img: '/images/pizza/1.jpeg'
+  },
+  {
+    id: 2,
+    title: 'Пицца Пепперони',
+    price: 820,
+    description: '600 грамм',
+    img: '/images/pizza/2.jpeg'
+  },
+  {
+    id: 3,
+    title: 'Пицца Четыре сыра',
+    price: 820,
+    description: '620 грамм',
+    img: '/images/pizza/3.jpeg'
+  },
+  {
+    id: 4,
+    title: 'Пицца Маргарита',
+    price: 820,
+    description: '580 грамм',
+    img: '/images/pizza/4.jpeg'
+  },
+  {
+    id: 5,
+    title: 'Пицца Охотничья',
+    price: 830,
+    description: '610 грамм',
+    img: '/images/pizza/5.jpeg'
+  },
+  {
+    id: 6,
+    title: 'Пицца Цезарь',
+    price: 830,
+    description: '610 грамм',
+    img: '/images/pizza/6.jpeg'
+  },
+  {
+    id: 7,
+    title: 'Пицца Гавайская',
+    price: 820,
+    description: '580 грамм',
+    img: '/images/pizza/7.jpeg'
+  },
+  {
+    id: 8,
+    title: 'Пицца Рио',
+    price: 1200,
+    description: '630 грамм',
+    img: '/images/pizza/8.jpeg'
+  },
 ]
 
 const getTotalPrice = (list = []) => {
@@ -27,6 +75,29 @@ const ProductList = () => {
   const { tg } = useTelegram();
 
   const [addedItems, setAddedItems] = React.useState([]);
+
+  const onSendData = useCallback(() => {
+    const data = {
+      products: addedItems,
+      totalPrice: getTotalPrice(addedItems),
+    };
+
+    fetch('http://localhost:8000/api/products/add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+  }, [addedItems]);
+
+  useEffect(() => {
+    tg.onEvent('mainButtonClicked', onSendData)
+
+    return () => {
+      tg.offEvent('mainButtonClicked', onSendData)
+    };
+  }, [onSendData]);
 
   const onAdd = (product) => {
     const alreadyAdded = addedItems.find(item => item.id === product.id);
