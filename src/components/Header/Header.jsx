@@ -13,7 +13,12 @@ const Header = () => {
     <div className="header">
       <span className="username">{ user?.username ?? 'Неизвестный пользователь' }</span>
 
-      <Button onClick={onClose}>Закрыть</Button>
+      <Button
+        className="header-btn"
+        onClick={onClose}
+      >
+        Закрыть
+      </Button>
     </div>
   );
 };

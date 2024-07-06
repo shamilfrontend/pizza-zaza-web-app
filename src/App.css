@@ -8,8 +8,8 @@ body {
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
-  background-color: var(--tg-theme-bg-color);
-  color: var(--tg-theme-text-color);
+  background-color: #fff; /* var(--tg-theme-bg-color)*/
+  color: #000; /*  var(--tg-theme-text-color)*/
 }
 
 * {
