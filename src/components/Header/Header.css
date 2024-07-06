@@ -8,6 +8,10 @@
 
 .username {
   font-size: 20px;
+
+  span {
+    font-weight: 700;
+  }
 }
 
 .header-btn {

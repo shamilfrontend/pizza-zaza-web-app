@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <div className="header">
       <span className="username">
-        Привет, { user?.username ?? 'Неизвестный' }
+        Привет, <span>{ user?.username ?? 'Неизвестный' }</span>
       </span>
 
       <Button
