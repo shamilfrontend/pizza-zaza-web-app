@@ -29,7 +29,7 @@ const ProductList = () => {
   const [addedItems, setAddedItems] = React.useState([]);
 
   const onAdd = (product) => {
-    const alreadyAdded = addedItems.find(item => item.id !== product.id);
+    const alreadyAdded = addedItems.find(item => item.id === product.id);
 
     let newItems = [];
 
