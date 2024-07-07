@@ -98,7 +98,7 @@ const ProductList = () => {
       totalPrice: getTotalPrice(addedItems),
     };
 
-    fetch('http://87.242.107.91:8080/web-data', {
+    fetch('https://87.242.107.91:8080/web-data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
